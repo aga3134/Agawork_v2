@@ -1,0 +1,144 @@
+
+<!doctype html>
+<html lang="zh-Hant-TW">
+  <head>
+    <title>Agawork</title>
+    <link rel="icon" href="/static/image/logo.png">
+
+    <link rel="canonical" href="https://agawork.tw" />
+    <meta property="og:url" content="https://agawork.tw" />
+
+    <meta name="description" content="到處跳坑的工程師 - 專案集散地"/>
+    <meta property="og:description" content="到處跳坑的工程師 - 專案集散地"/>
+
+    <meta property="og:site_name" content="Agawork" />
+    <meta property="og:locale" content="zh_TW" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Agawork" />
+    <meta property="og:image" content="https://agawork.tw/static/image/logo.png" />
+
+    <meta http-equiv="Content-Language" content="zh-tw" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/quasar@^1.6.1/dist/quasar.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/static/build/css/main.css">
+
+    <!-- google analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-64789288-4', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+  </head>
+
+  <body>
+    <div class="mainApp" id="mainApp">
+      <q-layout view="lHh lpr lFf" class="bg-grey-1" container>
+        <q-header class="topbar">
+          <q-toolbar class="q-pr-none">
+              <img class="logo" src="/static/image/logo.png">
+              <q-space></q-space>
+              <q-btn class="gt-xs" size="16px" flat label="專案" @click="ScrollToAnchor('project');"></q-btn>
+              <q-btn class="gt-xs" size="16px" flat label="技術文件" @click="ScrollToAnchor('resource');"></q-btn>
+              <q-btn class="gt-xs" size="16px" flat label="關於" @click="ScrollToAnchor('about');"></q-btn>
+              
+              <q-btn class="lt-sm" flat @click="openMenu = !openMenu" icon="menu">
+                <q-menu auto-close square transition-show="jump-down" transition-hide="jump-up">
+                  <q-list style="min-width: 100px">
+                    <q-item clickable @click="ScrollToAnchor('project');">
+                      <q-item-section>專案</q-item-section>
+                    </q-item>
+                    <q-item clickable @click="ScrollToAnchor('resource');">
+                      <q-item-section>技術文件</q-item-section>
+                    </q-item>
+                    <q-item clickable @click="ScrollToAnchor('about');">
+                      <q-item-section>關於</q-item-section>
+                    </q-item>
+                  </q-list>
+                </q-menu>
+              </q-btn>
+
+          </q-toolbar>
+        </q-header>
+
+        <q-page-container>
+          <q-page>
+            <div class="row justify-center items-end">
+              <img class="banner" src="/static/image/logo.png">
+              <div class="text-h6 text-grey-7 q-my-lg">坑是人挖出來的，<br>就由人將它填回去！</div>
+            </div>
+            <div class="row q-px-md">
+              <q-select class="col col-sm-4 col-md-2" v-model="sortSelect" :options="sortOption" label="排序" option-value="value" option-label="label" emit-value map-options></q-select>
+            </div>
+
+            <div name="project">
+              <q-card class="category" v-for="cat in targetCategory">
+                <div class="row q-pa-sm bg-grey-8 text-white justify-center items-center cursor-pointer" @click="cat.openDesc = !cat.openDesc">
+                  <div class="text-h6">{{cat.name}}</div>
+                  <img class="expand-icon" src="/static/image/questionIcon.png">
+                </div>
+
+                <q-slide-transition>
+                  <div v-show="cat.openDesc">
+                    <div class="desc">{{cat.desc}}</div>  
+                  </div>
+                </q-slide-transition>
+                
+                <q-card-section>
+                  
+                </q-card-section>
+                
+              </q-card>
+            </div>
+
+            <q-card class="resource" name="resource">
+              <div class="header">
+                <div class="text-h6">技術文件</div>
+              </div>
+              <q-card-section>
+
+              </q-card-section>
+            </q-card>
+
+            <q-card class="about" name="about">
+              <div class="header">
+                <div class="text-h6">關於</div>
+              </div>
+
+              <q-card-section class="content">
+                <q-avatar round size="150px">
+                  <img src="/static/image/photo.jpg">
+                </q-avatar>
+                <div class="q-pa-md text-subtitle1">
+                  我是阿嘉，一個到處跳坑的工程師。<br>
+                  希望藉由專案實作，讓台灣變得更棒。<br>
+                  若你喜歡我的專案，歡迎
+                  <a class="donate-bt" href="https://p.ecpay.com.tw/D95AD">捐款贊助</a><br>
+                  如有合作需求，也歡迎來信討論 aga3134@gmail.com
+                </div>
+              </q-card-section>
+
+            </q-card>
+                
+
+          </q-page>
+
+        </q-page-container>
+
+        </q-layout>
+    </div>
+  </body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/quasar@^1.6.1/dist/quasar.umd.min.js"></script>
+  <script src="/static/main.js"></script>
+</html>
