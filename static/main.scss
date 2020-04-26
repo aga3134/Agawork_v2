@@ -1,6 +1,6 @@
 html, body{
 	height: 100%; margin: 0; padding: 0;
-    background-color: #edffef;
+    background-color: #cccccc;
 }
 
 * {
@@ -8,8 +8,23 @@ html, body{
     font-family: "微軟正黑體", "Microsoft JhengHei";
 }
 
+::-webkit-scrollbar {
+    height: 8px;
+    background-color: #cccccc;
+}
+ 
+::-webkit-scrollbar-track {
+    border-radius: 3px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: #888888;
+}
+
 .mainApp{
 	width: 100%;
+	margin: auto;
 	height: 100%;
 	.topbar{
 		background-color: rgba(50,50,50,0.5);
@@ -22,6 +37,10 @@ html, body{
 		display: block;
 		margin: 0px 20px;
 		width: 200px;
+	}
+	.content-container{
+		max-width: 1200px;
+		margin: auto;
 	}
 	.category{
 		margin: 10px;
@@ -36,6 +55,21 @@ html, body{
 			height: 15px;
 			margin: 5px;
 		}
+		.link-list{
+			margin: 0px;
+			list-style: none;
+			padding: 0px;
+			li{
+				a{
+					font-size: 1.1em;
+					text-decoration: none;
+					color: #ff6633;
+					&:hover{
+						color: #993333;
+					}
+				}
+			}
+		}
 	}
 
 	.resource{
@@ -45,6 +79,23 @@ html, body{
 			padding: 5px;
 			background-color: #4e9b6d;
 			color: #ffffff;
+		}
+		.resource-link{
+			display: inline-block;
+			margin: 5px 10px;
+			a{
+				&::before{
+					content:"◼";
+					margin: 5px;
+				}
+				text-decoration: none;
+				font-size: 1.1em;
+				text-decoration: none;
+				color: #336633;
+				&:hover{
+					color: #339933;
+				}
+			}
 		}
 	}
 
@@ -67,7 +118,27 @@ html, body{
 				background-color: #6464F1;
 				padding: 5px 10px;
 				margin: 10px;
+				border-radius: 3px;
 			}
+		}
+	}
+
+	.partner{
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		flex-wrap: wrap;
+		.logo-long{
+			height: 50px;
+			margin: 10px;
+		}
+		.logo-mid{
+			height: 75px;
+			margin: 10px;
+		}
+		.logo-short{
+			height: 100px;
+			margin: 10px;
 		}
 	}
 }

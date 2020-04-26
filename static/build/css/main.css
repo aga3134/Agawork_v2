@@ -3,14 +3,26 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #edffef; }
+  background-color: #cccccc; }
 
 * {
   box-sizing: border-box;
   font-family: "微軟正黑體", "Microsoft JhengHei"; }
 
+::-webkit-scrollbar {
+  height: 8px;
+  background-color: #cccccc; }
+
+::-webkit-scrollbar-track {
+  border-radius: 3px; }
+
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: #888888; }
+
 .mainApp {
   width: 100%;
+  margin: auto;
   height: 100%; }
   .mainApp .topbar {
     background-color: rgba(50, 50, 50, 0.5);
@@ -21,6 +33,9 @@ html, body {
     display: block;
     margin: 0px 20px;
     width: 200px; }
+  .mainApp .content-container {
+    max-width: 1200px;
+    margin: auto; }
   .mainApp .category {
     margin: 10px; }
     .mainApp .category .desc {
@@ -32,6 +47,16 @@ html, body {
       width: 15px;
       height: 15px;
       margin: 5px; }
+    .mainApp .category .link-list {
+      margin: 0px;
+      list-style: none;
+      padding: 0px; }
+      .mainApp .category .link-list li a {
+        font-size: 1.1em;
+        text-decoration: none;
+        color: #ff6633; }
+        .mainApp .category .link-list li a:hover {
+          color: #993333; }
   .mainApp .resource {
     margin: 10px; }
     .mainApp .resource .header {
@@ -39,6 +64,19 @@ html, body {
       padding: 5px;
       background-color: #4e9b6d;
       color: #ffffff; }
+    .mainApp .resource .resource-link {
+      display: inline-block;
+      margin: 5px 10px; }
+      .mainApp .resource .resource-link a {
+        text-decoration: none;
+        font-size: 1.1em;
+        text-decoration: none;
+        color: #336633; }
+        .mainApp .resource .resource-link a::before {
+          content: "◼";
+          margin: 5px; }
+        .mainApp .resource .resource-link a:hover {
+          color: #339933; }
   .mainApp .about .header {
     text-align: center;
     padding: 5px;
@@ -55,4 +93,19 @@ html, body {
       color: #ffffff;
       background-color: #6464F1;
       padding: 5px 10px;
+      margin: 10px;
+      border-radius: 3px; }
+  .mainApp .partner {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap; }
+    .mainApp .partner .logo-long {
+      height: 50px;
+      margin: 10px; }
+    .mainApp .partner .logo-mid {
+      height: 75px;
+      margin: 10px; }
+    .mainApp .partner .logo-short {
+      height: 100px;
       margin: 10px; }
