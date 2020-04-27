@@ -23,7 +23,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/quasar@^1.6.1/dist/quasar.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="/static/build/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/build/css/main.css?v=1.0.0">
 
     <!-- google analytics -->
     <script>
@@ -101,7 +101,7 @@
                   </div>
                 </q-slide-transition>
                 
-                <q-card-section class="row bg-grey-1">
+                <q-card-section class="row bg-grey-1 q-pa-sm">
                   <div class="col-12 col-sm-6 col-md-4 q-pa-sm" v-for="p in targetProject[cat.name]">
                     <q-card >
                       <q-img style="height:150px;" :src="p.photo"></q-img>
@@ -141,9 +141,15 @@
             <div class="q-pa-md">
               <div class="text-h4 text-center q-ma-sm">合作夥伴</div>
               <div class="partner">
-                <img class="logo-mid" v-for="p in partner['mid']" :src="p.url">
-                <img class="logo-short" v-for="p in partner['short']" :src="p.url">
-                <img class="logo-long" v-for="p in partner['long']" :src="p.url">
+                <a v-for="p in partner['mid']" :href="p.link" target="_blank">
+                  <img class="logo-mid" :src="p.url">
+                </a>
+                <a v-for="p in partner['short']" :href="p.link" target="_blank">
+                  <img class="logo-short" :src="p.url">
+                </a>
+                <a v-for="p in partner['long']" :href="p.link" target="_blank">
+                  <img class="logo-long" :src="p.url">
+                </a>
               </div>
             </div>
 
@@ -157,8 +163,11 @@
                   <img src="/static/image/photo.jpg">
                 </q-avatar>
                 <div class="q-pa-md text-subtitle1">
-                  我是阿嘉，一個到處跳坑的工程師，<br>
-                  希望藉由專案實作，讓台灣變得更好。<br>
+                  黃維嘉<br>
+                  一個到處跳坑的工程師，<br>
+                  2016年底踏入開源的世界，從此掉進坑裡。<br>
+                  入坑之前的學經歷請見
+                  <a href="https://docs.google.com/presentation/d/1cpyT2GM9npwO2Hgh2GOkMco3X3WeKZbtKcz_zSQOj88/edit?usp=sharing" target="_blank">2016自我介紹</a>。<br>
                   若你喜歡我的專案，歡迎
                   <a class="donate-bt" href="https://p.ecpay.com.tw/D95AD">捐款贊助</a><br>
                   如有合作需求，也歡迎來信討論 aga3134@gmail.com
@@ -167,8 +176,11 @@
 
             </q-card>
                 
-
           </q-page>
+
+          <div class="loading-page" v-show="loading">
+            <img src="/static/image/logo.png">
+          </div>
 
         </q-page-container>
 
@@ -179,5 +191,5 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
   <script src="https://cdn.jsdelivr.net/npm/quasar@^1.6.1/dist/quasar.umd.min.js"></script>
-  <script src="/static/main.js"></script>
+  <script src="/static/main.js?v=1.0.0"></script>
 </html>

@@ -13,7 +13,8 @@ new Vue({
 		partner: [],
 		openMenu: false,
 		targetCategory: [],
-		targetProject: {}
+		targetProject: {},
+		loading: true
 	},
 	created:function(){
 		this.sortOption = [
@@ -31,13 +32,13 @@ new Vue({
 		];
 
 		this.issueCategory = [
-			{name:"空汙",desc:"現代社會極度依賴石化燃料，除了造成地球暖化，汙染物排放也讓空氣品質受到極大影響。因此需要大家一起關心，共同監督。"},
-			{name:"水資源",desc:"在水龍頭打開就會有水的時代，人與河川的距離越來越遠。但是水的問題沒事則已，一出事就會對生活、生態造成重大影響，不能等閒視之。"},
+			{name:"空汙",desc:"現代社會極度依賴石化燃料，除了造成地球暖化，汙染物排放也讓空氣品質受到極大影響。你今天用肺當空氣清淨機了嗎?歡迎大家一起關心，共同監督。"},
+			{name:"水資源",desc:"在水龍頭打開就會有水的時代，水對很多人來說只是定時要繳的帳單。但是有水用可不是理所當然，建構可以支持生活、生態、生命的水環境，需要所有人共同努力。"},
 			{name:"高齡",desc:"台灣將在2026年進入超高齡社會，目前看到的偏鄉沒落、健保虧損、勞動力短缺都只是剛開始而已，面對越來越老的人口組成，你準備好了嗎?"},
-			{name:"教育",desc:"現有的教育體制中，國中要拚高中、高中要拚大學，拚出了社會還是不知道自己到底在拚什麼，一大堆人學非所用。這樣浪費生命的制度是否有解?"},
+			{name:"教育",desc:"現有的教育體制中，國中要拚高中、高中要拚大學，拚出了社會還是不知道自己到底在拚什麼。在人生的道路上，更多學位真的帶來更多幸福了嗎?"},
 			{name:"農業",desc:"自古以來民以食為天，農業在現代社會卻總是受到不公平的對待，違章工廠、農地豪宅、非法移工、供需失衡，亂象環生的國安產業是否能走出一條新路?"},
 			{name:"生態環境",desc:"生態多樣性直接影響了地球對各種變化的耐受能力，但人總以為自己能獨立於生態而生存，殊不知今日我們對生態所做的，日後必將十倍百倍奉還到自己身上。"},
-			{name:"其他",desc:"之前的工作成果，多半是技術導向，不是針對特定議題提出解決方案。"},
+			{name:"其他",desc:"之前的工作成果，多半是為技術而技術，雖然看起來不明覺厲但卻不知為何而戰。"},
 		];
 
 		this.skillCategory = [
@@ -62,11 +63,11 @@ new Vue({
 				skill: ["網頁平台","電腦視覺"],
 			},
 			{
-				name:"山河事件簿",desc:"在水龍頭打開就會有水的時代，人與河川的距離越來越遠。但你知道山河的一舉一動仍深深影響著你的命運嗎?「山河事件簿」集結與水相關的開放資料，帶你來看人與水互動之間所刻下的一道道歷史印記。",
+				name:"山河事件簿",desc:"「山河事件簿」集結與水相關的開放資料，在地圖上以直覺動態的方式做視覺化呈現，讓你不需是水資源專家也能快速掌握台灣水情。",
 				link:[
 					{"name":"網站連結",url:"https://riverlog.lass-net.org/"},
 					{"name":"開放原始碼",url:"https://github.com/aga3134/RiverLog"},
-					{"name":"民生公共物聯網2019競賽二獎",url:"https://www.facebook.com/groups/LASSnet/permalink/2459780144272581/"},
+					{"name":"民生公共物聯網2019競賽二獎",url:"https://www.facebook.com/CivilIoTTaiwan/posts/1074743229543955/"},
 				],
 				photo: "/static/image/project/RiverlogThumb.jpg",
 				time: ["返鄉時期"],
@@ -131,7 +132,8 @@ new Vue({
 			{
 				name:"物種救援",desc:"在毀滅來臨之前，你能拯救多少種族?謹以此遊戲向齊柏林導演致敬，您的遺志大家會繼續傳承下去的...",
 				link:[
-					{"name":"Demo影片",url:"https://www.youtube.com/watch?v=cmJOBnnjONs"}
+					{"name":"Demo影片",url:"https://www.youtube.com/watch?v=cmJOBnnjONs"},
+					{"name":"開放原始碼",url:"https://github.com/aga3134/OnTheRescueOfSpecies"},
 				],
 				photo: "/static/image/project/OnTheRescueOfSpeciesThumb.jpg",
 				time: ["找方向時期"],
@@ -187,8 +189,8 @@ new Vue({
 			{
 				name:"內視鏡影像立體化技術",desc:"內視鏡影像立體化技術利用操作內視鏡的位置變化，以移動視差估算影像深度，進而產生立體效果，增加手術的準確度。",
 				link:[
-					{"name":"專利",url:"https://patents.google.com/patent/WO2014027229A1/en"},
-					{"name":"專利",url:"https://patents.google.com/patent/TW201224829A"},
+					{"name":"論文",url:"https://onlinelibrary.wiley.com/doi/abs/10.1889/1.3621339"},
+					{"name":"專利",url:"https://patents.google.com/patent/WO2014027229A1/en"},					
 				],
 				photo: "/static/image/project/EndoscopeThumb.jpg",
 				time: ["工研院時期"],
@@ -220,6 +222,8 @@ new Vue({
 		];
 
 		this.resource = [
+			{name:"山河事件簿 - 決賽簡報", url:"https://docs.google.com/presentation/d/1HPcpK_6_hJ-UxZ3BYmIPnEt_66ClS6fECY-uc57dSTo/edit?usp=sharing"},
+			{name:"山河事件簿 - 複賽簡報", url:"https://docs.google.com/presentation/d/1hxQutbNjet2Y_psmE96miwkGDzxy94uOjkFoaR0gZa4/edit?usp=sharing"},
 			{name:"紫豹在哪裡 - 數據整合與視覺化", url:"https://docs.google.com/presentation/d/1ph8RMDUBXt6e9ak1hsL0R6vewnF73MxWu039WC4StuY/edit?usp=sharing"},
 			{name:"博祖克筆記", url:"https://docs.google.com/presentation/d/1PGMrBhTGOpq4-8BR4YcZKVg2uvUmLzW6_dFsw9G8o0U/edit?usp=sharing"},
 			{name:"資訊系統展開 - 以博祖克為例", url:"https://docs.google.com/presentation/d/1PeHAHwBCPo3AAv9b-Zhv3wgh83Zw4o12CtuJz15o-_g/edit?usp=sharing"},
@@ -228,25 +232,26 @@ new Vue({
 
 		this.partner = {
 			long: [
-				{name:"Goodwork",url:"/static/image/partner/goodwork.png"},
-				{name:"中研院",url:"/static/image/partner/sinica.png"},
-				{name:"工研院",url:"/static/image/partner/itri.png"},
-				{name:"龍吟研論",url:"/static/image/partner/ccc.png"},
-				{name:"中興大學",url:"/static/image/partner/nchu.png"},
-				{name:"水泥角民宿",url:"/static/image/partner/kidstaomi.png"},
+				{name:"Goodwork",url:"/static/image/partner/goodwork.png",link:"http://goodwork.hfcc.com.tw/"},
+				{name:"中研院",url:"/static/image/partner/sinica.png",link:"https://www.sinica.edu.tw/"},
+				{name:"工研院",url:"/static/image/partner/itri.png",link:"https://www.itri.org.tw/"},
+				{name:"龍吟研論",url:"/static/image/partner/ccc.png",link:"http://ccc.stansfoundation.org/"},
+				{name:"中興大學",url:"/static/image/partner/nchu.png",link:"https://www.nchu.edu.tw/index1.php"},
+				{name:"水泥角民宿",url:"/static/image/partner/kidstaomi.png",link:"https://www.kidstaomi.com/"},
 			],
 			mid: [
-				{name:"LASS",url:"/static/image/partner/lass.jpg"},
-				{name:"HCOS",url:"/static/image/partner/hcos.jpg"},
-				{name:"FBTUG",url:"/static/image/partner/fbtug.png"},
-				{name:"Unihub",url:"/static/image/partner/unihub.png"},
+				{name:"LASS",url:"/static/image/partner/lass.jpg",link:"https://www.facebook.com/groups/LASSnet/"},
+				{name:"HCOS",url:"/static/image/partner/hcos.jpg",link:"https://www.facebook.com/groups/115650035793555/"},
+				{name:"FBTUG",url:"/static/image/partner/fbtug.png",link:"https://www.facebook.com/groups/FarmBotTUG/"},
+				{name:"Unihub",url:"/static/image/partner/unihub.png",link:"https://unihub.hfcc.com.tw/"},
 			],
 			short: [
-				{name:"綠舟農場",url:"/static/image/partner/green_ark.jpg"},
-				{name:"龍坑農場",url:"/static/image/partner/lungkengpuli.jpg"},
+				{name:"綠舟農場",url:"/static/image/partner/green_ark.jpg",link:"https://www.facebook.com/greenarkfarm/"},
+				{name:"龍坑農場",url:"/static/image/partner/lungkengpuli.jpg",link:"https://www.facebook.com/lungkengpuli/"},
 			]
 		};
 		
+		this.loading = false;
 		this.UpdateProject();
 	},
 	methods: {

@@ -26,6 +26,21 @@ html, body{
 	width: 100%;
 	margin: auto;
 	height: 100%;
+	.loading-page{
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		height: 100%;
+		background-color: #ffffff;
+		display:flex;
+		justify-content: center;
+		align-items: center;
+		img{
+			width: 300px;
+			max-width: 100%;
+		}
+	}
 	.topbar{
 		background-color: rgba(50,50,50,0.5);
 		color: #ffffff;
@@ -110,14 +125,16 @@ html, body{
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			flex-wrap: wrap;
 			background-color: #A1AFC9;
 			color: #333333;
 			.donate-bt{
+				display: inline-block;
 				text-decoration: none;
 				color: #ffffff;
 				background-color: #6464F1;
-				padding: 5px 10px;
-				margin: 10px;
+				padding: 0px 10px;
+				margin: 5px;
 				border-radius: 3px;
 			}
 		}
@@ -131,14 +148,17 @@ html, body{
 		.logo-long{
 			height: 50px;
 			margin: 10px;
+			max-width: calc(100% - 20px);
 		}
 		.logo-mid{
 			height: 75px;
 			margin: 10px;
+			max-width: calc(100% - 20px);
 		}
 		.logo-short{
 			height: 100px;
 			margin: 10px;
+			max-width: calc(100% - 20px);
 		}
 	}
 }
