@@ -87,7 +87,7 @@ new Vue({
 			{
 				name:"樂樂活大解析",desc:"針對智榮基金會 未來長者需求線上問卷調查 開發的視覺化工具。",
 				link:[
-					{"name":"網站連結",url:"http://code.dataqualia.com:8001/"},
+					{"name":"網站連結",url:"https://happyliving.owlconsulting.com.tw/"},
 					{"name":"開放原始碼",url:"https://github.com/aga3134/HappyLiving"},
 					{"name":"龍吟研論新聞稿",url:"http://ccc.stansfoundation.org/?p=4505"},
 				],
