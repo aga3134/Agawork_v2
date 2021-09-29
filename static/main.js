@@ -51,6 +51,26 @@ new Vue({
 
 		this.project = [
 			{
+				name:"pm25.colife",desc:"pm25.colife為空汙、綠能預報模擬的模式展示平台，由Agawork與中興大學莊秉潔教授團隊合作開發。",
+				link:[
+					{"name":"網頁連結",url:"https://pm25.colife.org.tw/windy/"},
+				],
+				photo: "/static/image/project/PM25ColifeThumb.jpg",
+				time: ["返鄉時期"],
+				issue: ["空汙","生態環境"],
+				skill: ["資料視覺化"],
+			},
+			{
+				name:"田間巡航艦",desc:"田間巡航艦是繼土砲一號後另一個農業機器人專案，主要用來實驗在田間巡航的技術可行性，以及用自己的屍體展示地雷在哪裡。",
+				link:[
+					{"name":"開放原始碼",url:"https://github.com/aga3134/VapaaCruiser"},
+				],
+				photo: "/static/image/project/VapaaCruiserThumb.jpg",
+				time: ["返鄉時期"],
+				issue: ["農業"],
+				skill: ["嵌入式系統","電腦視覺"],
+			},
+			{
 				name:"群眾標註",desc:"群眾標註是讓公民科學社群分享影像資訊與知識的工具，產出的資料集可以提供機器學習(AI訓練)，也可以提供社群學習(新手訓練)。",
 				link:[
 					{"name":"測試連結",url:"https://commutag.agawork.tw"},
@@ -59,7 +79,7 @@ new Vue({
 				],
 				photo: "/static/image/project/CommutagThumb.jpg",
 				time: ["返鄉時期"],
-				issue: ["農業","生態環境"],
+				issue: ["農業","水資源","生態環境"],
 				skill: ["網頁平台","電腦視覺"],
 			},
 			{
