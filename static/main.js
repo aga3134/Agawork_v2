@@ -51,6 +51,18 @@ new Vue({
 
 		this.project = [
 			{
+				name:"思源地圖",desc:"「思源地圖」 為LASS社群的開放專案，整合了水資源相關的政府開放資料和民間的標註、分析資料，並以上下游拓樸的方式呈現在地圖上。使用者可以用問答介面追溯不同資料的關聯，快速掌握流域內的水文狀況。",
+				link:[
+					{"name":"網頁連結",url:"https://sourcingwater.lass-net.org/"},
+					{"name":"開放原始碼",url:"https://github.com/aga3134/SourcingWater"},
+					{"name":"Demo影片",url:"https://www.youtube.com/watch?v=GjlCAxsFYUc"},
+				],
+				photo: "/static/image/project/SourcingWater.jpg",
+				time: ["返鄉時期"],
+				issue: ["水資源","生態環境"],
+				skill: ["資料視覺化"],
+			},
+			{
 				name:"pm25.colife",desc:"pm25.colife為空汙、綠能預報模擬的模式展示平台，由Agawork與中興大學莊秉潔教授團隊合作開發。",
 				link:[
 					{"name":"網頁連結",url:"https://pm25.colife.org.tw/windy/"},
@@ -253,7 +265,6 @@ new Vue({
 		this.partner = {
 			long: [
 				{name:"Goodwork",url:"/static/image/partner/goodwork.png",link:"http://goodwork.hfcc.com.tw/"},
-				{name:"中研院",url:"/static/image/partner/sinica.png",link:"https://www.sinica.edu.tw/"},
 				{name:"工研院",url:"/static/image/partner/itri.png",link:"https://www.itri.org.tw/"},
 				{name:"龍吟研論",url:"/static/image/partner/ccc.png",link:"http://ccc.stansfoundation.org/"},
 				{name:"中興大學",url:"/static/image/partner/nchu.png",link:"https://www.nchu.edu.tw/index1.php"},
@@ -266,6 +277,7 @@ new Vue({
 				{name:"Unihub",url:"/static/image/partner/unihub.png",link:"https://unihub.hfcc.com.tw/"},
 			],
 			short: [
+				{name:"中研院資科所",url:"/static/image/partner/iis.jpg",link:"https://www.iis.sinica.edu.tw/zh/index.html"},
 				{name:"綠舟農場",url:"/static/image/partner/green_ark.jpg",link:"https://www.facebook.com/greenarkfarm/"},
 				{name:"龍坑農場",url:"/static/image/partner/lungkengpuli.jpg",link:"https://www.facebook.com/lungkengpuli/"},
 			]
