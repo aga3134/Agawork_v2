@@ -80,7 +80,7 @@
             </div>
             <div class="row q-px-md" name="project">
               <div class="col-6 col-sm-4 col-md-3 q-pa-sm">
-                <q-select  v-model="sortSelect" :options="sortOption" label="排序" option-value="value" option-label="label" emit-value map-options @input="UpdateProject();"></q-select>
+                <q-select  v-if="content" v-model="sortSelect" :options="content.sortOption" label="排序" option-value="value" option-label="label" emit-value map-options @input="UpdateProject();"></q-select>
               </div>
               
               <div class="col-6 col-sm-4 col-md-3 q-pa-sm">
@@ -131,8 +131,8 @@
               <div class="header">
                 <div class="text-h6">技術文件</div>
               </div>
-              <q-card-section>
-                <div class="resource-link" v-for="r in resource">
+              <q-card-section v-if="content">
+                <div class="resource-link" v-for="r in content.resource">
                   <a :href="r.url">{{r.name}}</a>
                 </div>
               </q-card-section>
@@ -140,14 +140,14 @@
 
             <div class="q-pa-md">
               <div class="text-h4 text-center q-ma-sm">合作夥伴</div>
-              <div class="partner">
-                <a v-for="p in partner['mid']" :href="p.link" target="_blank">
+              <div class="partner" v-if="content">
+                <a v-for="p in content.partner['mid']" :href="p.link" target="_blank">
                   <img class="logo-mid" :src="p.url">
                 </a>
-                <a v-for="p in partner['short']" :href="p.link" target="_blank">
+                <a v-for="p in content.partner['short']" :href="p.link" target="_blank">
                   <img class="logo-short" :src="p.url">
                 </a>
-                <a v-for="p in partner['long']" :href="p.link" target="_blank">
+                <a v-for="p in content.partner['long']" :href="p.link" target="_blank">
                   <img class="logo-long" :src="p.url">
                 </a>
               </div>
@@ -191,5 +191,5 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
   <script src="https://cdn.jsdelivr.net/npm/quasar@^1.6.1/dist/quasar.umd.min.js"></script>
-  <script src="/static/main.js?v=1.0.0"></script>
+  <script src="/static/main.js?v=1.1.0"></script>
 </html>
