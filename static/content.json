@@ -274,5 +274,14 @@
       {"name":"綠舟農場","url":"/static/image/partner/green_ark.jpg","link":"https://www.facebook.com/greenarkfarm/"},
       {"name":"龍坑農場","url":"/static/image/partner/lungkengpuli.jpg","link":"https://www.facebook.com/lungkengpuli/"}
     ]
+  },
+  "about":{
+    "desc":"黃維嘉，一個到處跳坑的工程師，2016年底踏入開源的世界，從此掉進坑裡。",
+    "photo": "/static/image/photo.jpg",
+    "link":[
+      {"name":"專案網頁","url":"https://agawork.tw/"},
+      {"name":"Github","url":"https://github.com/aga3134"},
+      {"name":"自我介紹(2016)","url":"https://docs.google.com/presentation/d/1cpyT2GM9npwO2Hgh2GOkMco3X3WeKZbtKcz_zSQOj88/edit?usp=sharing"}
+    ]
   }
 }
