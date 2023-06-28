@@ -33,7 +33,9 @@
       "link":[
         {"name":"網頁連結","url":"https://sourcingwater.lass-net.org/"},
         {"name":"開放原始碼","url":"https://github.com/aga3134/SourcingWater"},
-        {"name":"Demo影片","url":"https://www.youtube.com/watch?v=GjlCAxsFYUc"}
+        {"name":"2021總統盃黑客松卓越團隊","url":"https://www.youtube.com/watch?v=yJKn75nHPeo"},
+        {"name":"複賽Demo影片","url":"https://www.youtube.com/watch?v=GjlCAxsFYUc"},
+        {"name":"決賽Demo影片","url":"https://www.youtube.com/watch?v=7K6vB31RLk8"}
       ],
       "photo": "/static/image/project/SourcingWater.jpg",
       "time": ["返鄉時期"],
@@ -81,7 +83,7 @@
       "link":[
         {"name":"網站連結","url":"https://riverlog.lass-net.org/"},
         {"name":"開放原始碼","url":"https://github.com/aga3134/RiverLog"},
-        {"name":"民生公共物聯網2019競賽二獎","url":"https://www.facebook.com/CivilIoTTaiwan/posts/1074743229543955/"}
+        {"name":"民生公共物聯網2019競賽二獎(首獎從缺)","url":"https://www.facebook.com/CivilIoTTaiwan/posts/1074743229543955/"}
       ],
       "photo": "/static/image/project/RiverlogThumb.jpg",
       "time": ["返鄉時期"],
@@ -103,7 +105,7 @@
       "name":"樂樂活大解析",
       "desc":"針對智榮基金會 未來長者需求線上問卷調查 開發的視覺化工具。",
       "link":[
-        {"name":"網站連結","url":"https://happyliving.owlconsulting.com.tw/"},
+        {"name":"網站連結","url":"https://happyliving.agawork.tw/"},
         {"name":"開放原始碼","url":"https://github.com/aga3134/HappyLiving"},
         {"name":"龍吟研論新聞稿","url":"http://ccc.stansfoundation.org/?p=4505"}
       ],
